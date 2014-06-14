@@ -1,0 +1,40 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+definitions:
+  user:
+    definitions:
+      name:
+        type:
+        - string
+        example: "r7kamura"
+  gist:
+    title: Gist
+    description: Gist object
+    type:
+    - object
+    required:
+    - id
+    definitions:
+      id:
+        type:
+        - string
+        example: "1"
+    links:
+    - description: List a user's gists
+      href: "/users/{(#/definitions/user/definitions/name)}/gists"
+      method: GET
+      rel: instances
+      title: List
+    properties:
+      id:
+        "$ref": "#/definitions/gist/definitions/id"
+properties:
+  gist:
+    "$ref": "#/definitions/gist"
+type:
+- object
+description: GitHub API v3
+links:
+- href: https://api.github.com
+  rel: self
+title: GitHub API v3
