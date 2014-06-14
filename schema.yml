@@ -16,9 +16,20 @@ definitions:
     - id
     definitions:
       id:
+        description: Identifier of a gist
         type:
         - string
         example: "1"
+      public:
+        description: "Indicates whether the gist is public. Default: `false`"
+        type:
+        - boolean
+        example: true
+      description:
+        description: the description for this gist
+        type:
+        - string
+        example: "description of gist"
     links:
     - title: ListUsers
       description: List a user's gists
@@ -30,6 +41,21 @@ definitions:
       href: "/gists/public"
       method: GET
       rel: instances
+    - title: Create
+      description: Create a gist
+      href: "/gists"
+      method: POST
+      rel: create
+      targetSchema:
+        properties:
+          description:
+            "$ref": "#/definitions/gist/definitions/description"
+          public:
+            "$ref": "#/definitions/gist/definitions/public"
+          files:
+            description: A set of files whose key is a filename and the value is an object that has content key
+            type:
+            - object
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"
