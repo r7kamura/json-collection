@@ -1,0 +1,40 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (4.1.1)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
+    i18n (0.6.9)
+    json (1.8.1)
+    json_schema (0.1.4)
+    minitest (5.3.4)
+    multipart-post (2.0.0)
+    plz (0.1.0)
+      activesupport
+      faraday
+      faraday_middleware
+      json_schema
+      rack
+      rainbow
+      rouge
+      slop
+    rack (1.5.2)
+    rainbow (2.0.0)
+    rouge (1.4.0)
+    slop (3.5.0)
+    thread_safe (0.3.4)
+    tzinfo (1.2.1)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  plz
