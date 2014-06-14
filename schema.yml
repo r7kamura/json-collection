@@ -20,11 +20,16 @@ definitions:
         - string
         example: "1"
     links:
-    - description: List a user's gists
+    - title: ListUsers
+      description: List a user's gists
       href: "/users/{(#/definitions/user/definitions/name)}/gists"
       method: GET
       rel: instances
-      title: List
+    - title: ListPublic
+      description: List public gists
+      href: "/gists/public"
+      method: GET
+      rel: instances
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"
