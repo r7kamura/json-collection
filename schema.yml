@@ -94,6 +94,10 @@ definitions:
             "$ref": "#/definitions/gist/definitions/public"
           files:
             "$ref": "#/definitions/gist/definitions/files"
+    - title: Delete
+      description: Delete a gist
+      method: DELETE
+      href: "/gists/{(#/definitions/gist/definitions/id)}"
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"
