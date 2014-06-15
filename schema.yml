@@ -85,6 +85,7 @@ definitions:
       description: Edit a gist
       method: PATCH
       href: "/gists/{(#/definitions/gist/definitions/id)}"
+      rel: update
       schema:
         type: object
         properties:
@@ -98,6 +99,7 @@ definitions:
       description: Delete a gist
       method: DELETE
       href: "/gists/{(#/definitions/gist/definitions/id)}"
+      rel: delete
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"
