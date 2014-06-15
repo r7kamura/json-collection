@@ -12,6 +12,8 @@
  * [GET /gists/public](#get-gistspublic)
  * [GET /gists/starred](#get-gistsstarred)
  * [GET /users/:name/gists](#get-usersnamegists)
+* [Comment](#comment)
+ * [GET /gists/:id/comments](#get-gistsidcomments)
 * [Commit](#commit)
  * [GET /gists/:id/commits](#get-gistsidcommits)
 
@@ -252,6 +254,50 @@ Content-Type: application/json
 
 {
   "id": "1"
+}
+```
+
+## Comment
+
+
+### Properties
+* id - 
+ * Example: `1`
+ * Type: integer
+* url - 
+ * Example: `"https://api.github.com/gists/928ee253e79db4809168/comments/1"`
+ * Type: string
+* body - 
+ * Example: `"Just commenting for the sake of commenting"`
+ * Type: string
+* created_at - 
+ * Example: `"2011-04-18T23:23:56Z"`
+ * Type: string
+ * Format: date-time
+* updated_at - 
+ * Example: `"2011-04-18T23:23:56Z"`
+ * Type: string
+ * Format: date-time
+
+### GET /gists/:id/comments
+List comments on a gist
+
+```
+GET /gists/:id/comments HTTP/1.1
+Content-Type: application/json
+Host: api.github.com
+```
+
+```
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "id": 1,
+  "url": "https://api.github.com/gists/928ee253e79db4809168/comments/1",
+  "body": "Just commenting for the sake of commenting",
+  "created_at": "2011-04-18T23:23:56Z",
+  "updated_at": "2011-04-18T23:23:56Z"
 }
 ```
 

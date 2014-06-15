@@ -8,6 +8,37 @@ definitions:
         type:
         - string
         example: "r7kamura"
+  comment:
+    title: Comment
+    properties:
+      id:
+        "$ref": "#/definitions/comment/definitions/id"
+      url:
+        "$ref": "#/definitions/comment/definitions/url"
+      body:
+        "$ref": "#/definitions/comment/definitions/body"
+      created_at:
+        "$ref": "#/definitions/comment/definitions/created_at"
+      updated_at:
+        "$ref": "#/definitions/comment/definitions/updated_at"
+    definitions:
+      id:
+        type: integer
+        example: 1
+      url:
+        type: string
+        example: "https://api.github.com/gists/928ee253e79db4809168/comments/1"
+      body:
+        type: string
+        example: Just commenting for the sake of commenting
+      created_at:
+        type: string
+        format: date-time
+        example: "2011-04-18T23:23:56Z"
+      updated_at:
+        type: string
+        format: date-time
+        example: "2011-04-18T23:23:56Z"
   commit:
     title: Commit
     properties:
@@ -148,6 +179,13 @@ definitions:
       method: POST
       href: "/gists/{(#/definitions/gist/definitions/id)}/forks"
       rel: create
+    - title: ListComments
+      description: List comments on a gist
+      method: GET
+      href: "/gists/{(#/definitions/gist/definitions/id)}/comments"
+      rel: instances
+      targetSchema:
+        "$ref": "#/properties/comment"
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"
@@ -156,6 +194,10 @@ properties:
     "$ref": "#/definitions/gist"
   commit:
     "$ref": "#/definitions/commit"
+  comment:
+    "$ref": "#/definitions/comment"
+  user:
+    "$ref": "#/definitions/user"
 type:
 - object
 description: GitHub API v3
