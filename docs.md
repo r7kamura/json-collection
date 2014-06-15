@@ -5,6 +5,9 @@
  * [GET /gists/:id](#get-gistsid)
  * [PATCH /gists/:id](#patch-gistsid)
  * [DELETE /gists/:id](#delete-gistsid)
+ * [GET /gists/:id/star](#get-gistsidstar)
+ * [PUT /gists/:id/star](#put-gistsidstar)
+ * [DELETE /gists/:id/star](#delete-gistsidstar)
  * [GET /gists/public](#get-gistspublic)
  * [GET /gists/starred](#get-gistsstarred)
  * [GET /users/:name/gists](#get-usersnamegists)
@@ -104,6 +107,64 @@ Delete a gist
 
 ```
 DELETE /gists/:id HTTP/1.1
+Content-Type: application/json
+Host: api.github.com
+```
+
+```
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "id": "1"
+}
+```
+
+### GET /gists/:id/star
+check if a gist is starred
+
+```
+GET /gists/:id/star HTTP/1.1
+Content-Type: application/json
+Host: api.github.com
+```
+
+```
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "id": "1"
+}
+```
+
+### PUT /gists/:id/star
+Star a gist
+
+```
+PUT /gists/:id/star HTTP/1.1
+Content-Type: application/json
+Host: api.github.com
+
+{
+  "id": "1"
+}
+```
+
+```
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "id": "1"
+}
+```
+
+### DELETE /gists/:id/star
+Unstar a gist
+
+```
+DELETE /gists/:id/star HTTP/1.1
 Content-Type: application/json
 Host: api.github.com
 ```

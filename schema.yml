@@ -128,6 +128,21 @@ definitions:
       rel: instances
       targetSchema:
         $ref: "#/properties/commit"
+    - title: Star
+      description: Star a gist
+      method: PUT
+      href: "/gists/{(#/definitions/gist/definitions/id)}/star"
+      rel: update
+    - title: Unstar
+      description: Unstar a gist
+      method: DELETE
+      href: "/gists/{(#/definitions/gist/definitions/id)}/star"
+      rel: delete
+    - title: Starred
+      description: Check if a gist is starred
+      method: GET
+      href: "/gists/{(#/definitions/gist/definitions/id)}/star"
+      rel: show
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"
