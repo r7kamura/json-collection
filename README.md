@@ -1,5 +1,5 @@
-# GitHub JSON Schema
-JSON Schema for GitHub API v3.
+# JSON Collection
+A collection of JSON Schema for various APIs.
 
 ## Try API
 The handy CLI HTTP Client [plz](https://github.com/r7kamura/plz)
@@ -7,6 +7,7 @@ help you try to test the API.
 
 ```sh
 $ gem install plz
+$ cd github
 $ plz list_users gist name=r7kamura
 $ plz list_public
 $ echo '
