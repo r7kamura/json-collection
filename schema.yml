@@ -143,6 +143,11 @@ definitions:
       method: GET
       href: "/gists/{(#/definitions/gist/definitions/id)}/star"
       rel: show
+    - title: Fork
+      description: Fork a gist
+      method: POST
+      href: "/gists/{(#/definitions/gist/definitions/id)}/forks"
+      rel: create
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"

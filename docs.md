@@ -5,6 +5,7 @@
  * [GET /gists/:id](#get-gistsid)
  * [PATCH /gists/:id](#patch-gistsid)
  * [DELETE /gists/:id](#delete-gistsid)
+ * [POST /gists/:id/forks](#post-gistsidforks)
  * [GET /gists/:id/star](#get-gistsidstar)
  * [PUT /gists/:id/star](#put-gistsidstar)
  * [DELETE /gists/:id/star](#delete-gistsidstar)
@@ -120,8 +121,30 @@ Content-Type: application/json
 }
 ```
 
+### POST /gists/:id/forks
+Fork a gist
+
+```
+POST /gists/:id/forks HTTP/1.1
+Content-Type: application/json
+Host: api.github.com
+
+{
+  "id": "1"
+}
+```
+
+```
+HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "id": "1"
+}
+```
+
 ### GET /gists/:id/star
-check if a gist is starred
+Check if a gist is starred
 
 ```
 GET /gists/:id/star HTTP/1.1
