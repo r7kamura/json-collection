@@ -3,6 +3,7 @@
  * [GET /gists](#get-gists)
  * [POST /gists](#post-gists)
  * [GET /gists/:id](#get-gistsid)
+ * [PATCH /gists/:id](#patch-gistsid)
  * [GET /gists/public](#get-gistspublic)
  * [GET /gists/starred](#get-gistsstarred)
  * [GET /users/:name/gists](#get-usersnamegists)
@@ -62,6 +63,28 @@ Get a single gist
 GET /gists/:id HTTP/1.1
 Content-Type: application/json
 Host: api.github.com
+```
+
+```
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "id": "1"
+}
+```
+
+### PATCH /gists/:id
+Edit a gist
+
+```
+PATCH /gists/:id HTTP/1.1
+Content-Type: application/json
+Host: api.github.com
+
+{
+  "id": "1"
+}
 ```
 
 ```

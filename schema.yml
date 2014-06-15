@@ -30,6 +30,18 @@ definitions:
         type:
         - string
         example: "description of gist"
+      files:
+        description: Files that make up this gist (used for both POST and PATCH)
+        type: object
+        example:
+          file1.txt:
+            content: updated file contents
+          old_name.txt:
+            filename: new_name.txt
+            content: modified contents
+          new_file.txt:
+            content: a new file
+          delete_this_file.txt: null
     links:
     - title: Show
       description: Get a single gist
@@ -68,9 +80,20 @@ definitions:
           public:
             "$ref": "#/definitions/gist/definitions/public"
           files:
-            description: A set of files whose key is a filename and the value is an object that has content key
-            type:
-            - object
+            "$ref": "#/definitions/gist/definitions/files"
+    - title: Update
+      description: Edit a gist
+      method: PATCH
+      href: "/gists/{(#/definitions/gist/definitions/id)}"
+      schema:
+        type: object
+        properties:
+          description:
+            "$ref": "#/definitions/gist/definitions/description"
+          public:
+            "$ref": "#/definitions/gist/definitions/public"
+          files:
+            "$ref": "#/definitions/gist/definitions/files"
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"
