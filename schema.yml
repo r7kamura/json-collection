@@ -2,11 +2,32 @@
 "$schema": http://json-schema.org/draft-04/hyper-schema
 definitions:
   user:
+    title: User
     definitions:
       name:
         type:
         - string
         example: "r7kamura"
+  commit:
+    title: Commit
+    properties:
+      url:
+        "$ref": "#/definitions/commit/definitions/url"
+      version:
+        "$ref": "#/definitions/commit/definitions/version"
+      committed_at:
+        "$ref": "#/definitions/commit/definitions/committed_at"
+    definitions:
+      url:
+        type: string
+        example: "https://api.github.com/gists/e49e8dbd1b30d170449c"
+      version:
+        type: string
+        example: 57a7f021a713b1c5a6a199b54cc514735d2d462f
+      committed_at:
+        type: string
+        format: date-time
+        example: "2010-04-14T02:15:15Z"
   gist:
     title: Gist
     description: Gist object
@@ -100,12 +121,21 @@ definitions:
       method: DELETE
       href: "/gists/{(#/definitions/gist/definitions/id)}"
       rel: delete
+    - title: ListCommits
+      description: List gist commits
+      method: GET
+      href: "/gists/{(#/definitions/gist/definitions/id)}/commits"
+      rel: instances
+      targetSchema:
+        $ref: "#/properties/commit"
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"
 properties:
   gist:
     "$ref": "#/definitions/gist"
+  commit:
+    "$ref": "#/definitions/commit"
 type:
 - object
 description: GitHub API v3

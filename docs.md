@@ -8,6 +8,8 @@
  * [GET /gists/public](#get-gistspublic)
  * [GET /gists/starred](#get-gistsstarred)
  * [GET /users/:name/gists](#get-usersnamegists)
+* [Commit](#commit)
+ * [GET /gists/:id/commits](#get-gistsidcommits)
 
 ## Gist
 Gist object
@@ -166,6 +168,41 @@ Content-Type: application/json
 
 {
   "id": "1"
+}
+```
+
+## Commit
+
+
+### Properties
+* url - 
+ * Example: `"https://api.github.com/gists/e49e8dbd1b30d170449c"`
+ * Type: string
+* version - 
+ * Example: `"57a7f021a713b1c5a6a199b54cc514735d2d462f"`
+ * Type: string
+* committed_at - 
+ * Example: `"2010-04-14T02:15:15Z"`
+ * Type: string
+ * Format: date-time
+
+### GET /gists/:id/commits
+List gist commits
+
+```
+GET /gists/:id/commits HTTP/1.1
+Content-Type: application/json
+Host: api.github.com
+```
+
+```
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "url": "https://api.github.com/gists/e49e8dbd1b30d170449c",
+  "version": "57a7f021a713b1c5a6a199b54cc514735d2d462f",
+  "committed_at": "2010-04-14T02:15:15Z"
 }
 ```
 
