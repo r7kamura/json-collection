@@ -31,6 +31,11 @@ definitions:
         - string
         example: "description of gist"
     links:
+    - title: List
+      description: List the authenticated user's gists or if called anonymously, this will return all public gists
+      method: GET
+      href: "/gists"
+      rel: instances
     - title: ListUsers
       description: List a user's gists
       href: "/users/{(#/definitions/user/definitions/name)}/gists"
