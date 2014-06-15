@@ -186,6 +186,18 @@ definitions:
       rel: instances
       targetSchema:
         "$ref": "#/properties/comment"
+    - title: CreateComment
+      description: Create a comment
+      method: POST
+      href: "/gists/{(#/definitions/gist/definitions/id)}/comments"
+      rel: create
+      targetSchema:
+        "$ref": "#/properties/comment"
+      schema:
+        type: object
+        properties:
+          body:
+            "$ref": "#/definitions/comment/definitions/body"
     properties:
       id:
         "$ref": "#/definitions/gist/definitions/id"
