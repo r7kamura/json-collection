@@ -2,7 +2,7 @@
 JSON Schema for GitHub API v3.
 
 ## Try API
-The handy CLI HTTP Client [plz](https://github.com/r7kamura/tqchain)
+The handy CLI HTTP Client [plz](https://github.com/r7kamura/plz)
 help you try to test the API.
 
 ```sh
