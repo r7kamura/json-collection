@@ -14,7 +14,6 @@
  * [GET /users/:name/gists](#get-usersnamegists)
 * [Comment](#comment)
  * [GET /gists/:id/comments](#get-gistsidcomments)
-* [Comment](#comment)
  * [POST /gists/:id/comments](#post-gistsidcomments)
 * [Commit](#commit)
  * [GET /gists/:id/commits](#get-gistsidcommits)
@@ -302,28 +301,6 @@ Content-Type: application/json
   "updated_at": "2011-04-18T23:23:56Z"
 }
 ```
-
-## Comment
-
-
-### Properties
-* id - 
- * Example: `1`
- * Type: integer
-* url - 
- * Example: `"https://api.github.com/gists/928ee253e79db4809168/comments/1"`
- * Type: string
-* body - 
- * Example: `"Just commenting for the sake of commenting"`
- * Type: string
-* created_at - 
- * Example: `"2011-04-18T23:23:56Z"`
- * Type: string
- * Format: date-time
-* updated_at - 
- * Example: `"2011-04-18T23:23:56Z"`
- * Type: string
- * Format: date-time
 
 ### POST /gists/:id/comments
 Create a comment
