@@ -61,7 +61,7 @@ definitions:
       href: "/gists"
       method: POST
       rel: create
-      targetSchema:
+      schema:
         properties:
           description:
             "$ref": "#/definitions/gist/definitions/description"
