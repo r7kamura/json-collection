@@ -4,6 +4,7 @@
  * [POST /gists](#post-gists)
  * [GET /gists/:id](#get-gistsid)
  * [PATCH /gists/:id](#patch-gistsid)
+ * [DELETE /gists/:id](#delete-gistsid)
  * [GET /gists/public](#get-gistspublic)
  * [GET /gists/starred](#get-gistsstarred)
  * [GET /users/:name/gists](#get-usersnamegists)
@@ -85,6 +86,24 @@ Host: api.github.com
 {
   "id": "1"
 }
+```
+
+```
+HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "id": "1"
+}
+```
+
+### DELETE /gists/:id
+Delete a gist
+
+```
+DELETE /gists/:id HTTP/1.1
+Content-Type: application/json
+Host: api.github.com
 ```
 
 ```
